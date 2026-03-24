@@ -13,7 +13,8 @@ server.registerTool(
   "get-city-weather",
   {
     title: "Gets a city's weather information.",
-    description: "",
+    description:
+      "Retrieves current weather conditions including temperature, humidity, precipitation, and wind speed for a specified city.",
     inputSchema: z.object({
       city: z.string().describe("The name of the city to get the weather for."),
     }),
@@ -25,7 +26,7 @@ server.registerTool(
         content: [
           {
             type: "text",
-            text: weatherApiResponse.text
+            text: weatherApiResponse.text,
           },
         ],
       };

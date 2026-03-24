@@ -1,6 +1,3 @@
-export const getWeatherCode = (weather_code: number): string =>
-  weatherCodeMap[weather_code] ?? "Unknown weather condition.";
-
 const weatherCodeMap: Record<number, string> = {
   0: "Clear sky",
 
@@ -42,3 +39,6 @@ const weatherCodeMap: Record<number, string> = {
   96: "Thunderstorm with slight hail",
   99: "Thunderstorm with heavy hail",
 };
+
+export const getWeatherCode = (weather_code: number): string =>
+  weatherCodeMap[weather_code] ?? "Unknown weather condition.";
