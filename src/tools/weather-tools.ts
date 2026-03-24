@@ -52,19 +52,19 @@ export const getCityWeather = async (
   // Variable indices correspond to request order:
   // 0: temperature_2m, 1: relative_humidity_2m, 2: apparent_temperature,
   // 3: precipitation, 4: wind_speed_10m, 5: weather_code
-  const getCurrentWeatherValue = (index: number): number =>
+  const getCurrentWeatherMetric = (index: number): number =>
     current.variables(index)?.value() ?? 0;
 
-  const weatherCondition = getWeatherCode(getCurrentWeatherValue(5) ?? -1);
+  const weatherCondition = getWeatherCode(getCurrentWeatherMetric(5) ?? -1);
 
   const weatherData = {
     current: {
       time: new Date(Number(current?.time())).toLocaleDateString(),
-      temperature_2m: Math.floor(getCurrentWeatherValue(0)),
-      relative_humidity_2m: Math.floor(getCurrentWeatherValue(1)),
-      apparent_temperature: Math.floor(getCurrentWeatherValue(2)),
-      precipitation: Math.floor(getCurrentWeatherValue(3)),
-      wind_speed_10m: Math.floor(getCurrentWeatherValue(4)),
+      temperature_2m: Math.floor(getCurrentWeatherMetric(0)),
+      relative_humidity_2m: Math.floor(getCurrentWeatherMetric(1)),
+      apparent_temperature: Math.floor(getCurrentWeatherMetric(2)),
+      precipitation: Math.floor(getCurrentWeatherMetric(3)),
+      wind_speed_10m: Math.floor(getCurrentWeatherMetric(4)),
       weather_condition: weatherCondition,
     },
   };
