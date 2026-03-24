@@ -1,12 +1,11 @@
-** **Description of Changes** **
+#### **Description of Changes**
 
 
- ** **Checklist** **
+#### **Checklist**
 - [ ] Added tests.
 - [ ] Checked the code builds.
 
- ** **Issue Reference** **
-Link: 
+#### **Issue Reference**
 
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
